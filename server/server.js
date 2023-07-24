@@ -21,16 +21,20 @@ const bookRouter = require('./routers/book.router.js')
 
 app.use('/book', bookRouter)
 
+const movieRouter = require('./routers/movieList.router.js');
+app.use('/movie', movieRouter);
+
 
 // Move movie code into a router
 // Extract movieList and create a new route, just like we did for /book
   // /movie
-const movieList = [];
-app.get('/movie', (req, res) => {
-  res.send(movieList);
-});
 
-app.post('/movie', (req, res) => {
-  movieList.push(req.body);
-  res.sendStatus(200);
-});
+// const movieList = [];
+// app.get('/movie', (req, res) => {
+//   res.send(movieList);
+// });
+
+// app.post('/movie', (req, res) => {
+//   movieList.push(req.body);
+//   res.sendStatus(200);
+// });
